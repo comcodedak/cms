@@ -1,0 +1,1 @@
+insert into MEMBER_INFO(MEMBER_NO,NAME,PWD) values('0001','test','test');

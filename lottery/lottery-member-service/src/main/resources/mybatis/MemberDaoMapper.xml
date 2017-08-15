@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.codedak.lottery.member.dao.IMemberDao">
+   <resultMap  id="memberMap" type="com.codedak.lottery.entity.Member">
+       <result column="MEMBER_NO" jdbcType="VARCHAR" property="memberNo" />
+		<result column="NAME" jdbcType="VARCHAR" property="name" />
+		<result column="PWD" jdbcType="VARCHAR" property="pwd" />
+		<result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+		<result column="UPDATE_TIME" jdbcType="VARCHAR" property="updataTime" />
+		<result column="MARK" jdbcType="VARCHAR" property="mark" />
+   </resultMap>
+   
+	<select id="findAllMember" resultMap="memberMap" >
+		select MEMBER_NO, NAME, PWD, CREATE_TIME, UPDATE_TIME
+		from MEMBER_INFO
+	</select>
+</mapper>

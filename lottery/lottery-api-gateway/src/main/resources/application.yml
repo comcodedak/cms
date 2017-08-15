@@ -1,0 +1,9 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: lottery-api-gateway
+    
+logging:
+   level:
+      root: debug
