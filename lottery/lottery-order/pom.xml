@@ -10,4 +10,28 @@
   <artifactId>lottery-order</artifactId>
   <name>lottery-order</name>
   <url>http://maven.apache.org</url>
+  
+  <dependencies>
+  	   <dependency>
+           <groupId>com.codedak</groupId>
+           <artifactId>lottery-skeleton</artifactId>
+           <version>0.0.1-SNAPSHOT</version>
+       </dependency>
+  <dependency>    
+      <groupId>com.caucho</groupId>    
+       <artifactId>hessian</artifactId>    
+        <version>4.0.38</version>
+</dependency>
+
+       <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+       </dependency>
+       <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+       </dependency>
+  </dependencies>
 </project>

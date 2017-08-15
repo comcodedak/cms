@@ -1,5 +1,10 @@
 package com.codedak.lottery.service;
 
 public interface ILotteryOrderService {
-     public void createOrder();
+	 /**
+	  * 创建彩票订单
+	  * @param orderAmt
+	  * @param orderStatus
+	  */
+     public void createOrder(String orderName,long orderAmt,String lotteryBusiness);
 }
