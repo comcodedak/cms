@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lottery.order.dao.ILotteryOrderDao">
+
+	<insert id="add" parameterType="com.codedak.lottery.entity.LotteryOrder">
+		insert into ORDER_LOTTERY
+			(ORDER_BUSINESS, ORDER_NAME, ORDER_AMT, ORDER_STATUS, LOTTERY_AMT, LOTTERY_BUSINESS, MARK)
+		values
+		(
+			#{orderBusiness,jdbcType=NUMERIC}, #{orderName,jdbcType=VARCHAR}, #{orderAmt,jdbcType=NUMERIC}, #{orderStatus,jdbcType=VARCHAR}, 
+			#{lotteryAmt,jdbcType=NUMERIC}, #{lotteryBusiness,jdbcType=VARCHAR}, #{mark,jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>

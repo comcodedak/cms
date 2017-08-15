@@ -1,5 +1,5 @@
 package com.codedak.lottery.service;
 
-public interface IOrderService {
+public interface ILotteryOrderService {
      public void createOrder();
 }

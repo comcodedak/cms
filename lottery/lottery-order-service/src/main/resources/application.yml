@@ -1,0 +1,25 @@
+server:
+  port: 8003 #端口
+spring:
+  h2: 
+    console:
+      enabled: true              #是否开启h2 web consloe，默认是true
+      path: /h2-console          #远程访问路径
+      settings:
+         web-allow-others: true  #开启h2 web consloe远程访问了
+  application:
+    name: lottery-order-service  #服务名
+  datasource:
+    url: jdbc:h2:mem:test  #配置h2数据库的连接地址
+    driver-class-name: org.h2.Driver #配置JDBC Driver
+    username: root  #配置数据库用户名
+    password: 123456  #配置数据库密码
+    schema: classpath:sql/order_ddl.sql #进行该配置后，每次启动程序，程序都会运行resources/db/schema.sql文件，对数据库的结构进行操作。
+    #data: classpath:db/data.sql         #进行该配置后，每次启动程序，程序都会运行resources/db/data.sql
+mybatis:
+  config-locations: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.codedak.lottery.entity
+logging:
+  level: 
+    root: info  #日志级别
