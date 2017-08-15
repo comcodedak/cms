@@ -1,29 +1,15 @@
 package com.codedak.lottery.entity;
 
 public class Member {
-	private String memberNo;
-	private String name;
-	private String pwd;
-	private String createTime;
-	private String updateTime;
-	private String mark;
-
-	public String getMemberNo() {
-		return memberNo;
-	}
-
-	public void setMemberNo(String memberNo) {
-		this.memberNo = memberNo;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	private String memberID;//账户ID
+	private String mail;//邮箱
+	private String mobile;//手机号码
+	private String pwd;//密码
+	private String niceName;//昵称
+	private String createTime;//记录创建时间
+	private String updateTime;//记录更新时间
+	private String mark;//备注
+	
 	public String getPwd() {
 		return pwd;
 	}
@@ -54,6 +40,38 @@ public class Member {
 
 	public void setMark(String mark) {
 		this.mark = mark;
+	}
+
+	public String getMemberID() {
+		return memberID;
+	}
+
+	public void setMemberID(String memberID) {
+		this.memberID = memberID;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getNiceName() {
+		return niceName;
+	}
+
+	public void setNiceName(String niceName) {
+		this.niceName = niceName;
 	}
 
 }
