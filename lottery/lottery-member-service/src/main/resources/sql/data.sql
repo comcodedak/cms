@@ -1,1 +1,1 @@
-insert into MEMBER_INFO(MEMBER_NO,NAME,PWD) values('0001','test','test');
+insert into MEMBER_INFO(MEMBER_NO,LOGIN_NAME,PWD,NICE_NAME) values('0001','test','test','test账户');

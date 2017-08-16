@@ -13,12 +13,26 @@
   
   
   <dependencies>
+  <!-- 测试 -->
+  <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+       </dependency>
         <!-- 服务注册 -->
 	     <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-	
+	        <!-- Spring Boot中使用Swagger2构建RESTful APIs  -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
 	<!-- 引入spring boot数据访问相关驱动 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

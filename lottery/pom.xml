@@ -42,11 +42,11 @@
 	<modules>
 		<module>lottery-api-gateway</module>
 		<module>lottery-member</module>
-		<module>lottery-order</module>
 		<module>lottery-member-service</module>
+		<module>lottery-order</module>
 		<module>lottery-order-service</module>
 		<module>lottery-skeleton</module>
-    <module>lottery-config</module>
+        <module>lottery-config</module>
   </modules>
 
 	<properties>

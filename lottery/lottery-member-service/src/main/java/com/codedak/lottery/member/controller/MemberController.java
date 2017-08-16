@@ -32,20 +32,28 @@ public class MemberController {
     @RequestMapping(value={"/login"}, method=RequestMethod.POST)
     public Member memberLogin(@RequestBody Member member) throws GlobalException {
     	if(member==null) {
-    		throw new GlobalException("90000", "参数不正确");
+    		throw new GlobalException("9000", "参数不正确");
     	}
-    	memberDao.query(member);
-    	return null;
+    	List<Member> ms=memberDao.query(member);
+    	if(ms!=null&&ms.size()==1) {
+    		return ms.get(0);
+    	}
+    	throw new GlobalException("9001", "登录失败");
     }
     
     @ApiOperation(value="账户注册", notes="")
     @RequestMapping(value={"/reg"}, method=RequestMethod.POST)
     public void memberReg(@RequestBody Member member) throws GlobalException {
     	if(member==null) {
-    		throw new GlobalException("90000", "参数不正确");
+    		throw new GlobalException("9000", "参数不正确");
     	}
-    	member.setMemberID(UUID.randomUUID().toString());
-    	memberDao.add(member);
+    	member.setMemberNo(UUID.randomUUID().toString());
+    	try {
+    		memberDao.add(member);
+    	}catch (Exception e) {
+    		throw new GlobalException("9001", "注册失败");
+		}
+    	
     }
     
     @ApiOperation(value="这是测试接口", notes="这是测试接口")

@@ -1,8 +1,9 @@
 --会员信息表
 CREATE TABLE IF NOT EXISTS MEMBER_INFO (
-   MEMBER_NO           VARCHAR    NOT NULL UNIQUE,--会员ID
-   NAME                VARCHAR    NOT NULL UNIQUE,--用户名(唯一)
+   MEMBER_NO           VARCHAR    NOT NULL UNIQUE,--会员NO号
+   LOGIN_NAME                VARCHAR    NOT NULL UNIQUE,--用户名(登录名，唯一)
    PWD                 VARCHAR    NOT NULL,--密码（密文）
+   NICE_NAME           VARCHAR   ,--昵称
    CREATE_TIME    TIMESTAMP    NOT NULL  default CURRENT_TIME()  ,  --记录创建时间
    UPDATE_TIME    TIMESTAMP ,  --记录更新时间
    MARK                VARCHAR  --备注

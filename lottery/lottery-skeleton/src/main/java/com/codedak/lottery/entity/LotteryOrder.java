@@ -1,7 +1,13 @@
 package com.codedak.lottery.entity;
 
-public class LotteryOrder {
-	  private String orderBusiness;//订单流水号
+import java.io.Serializable;
+
+public class LotteryOrder implements Serializable{
+	  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String orderBusiness;//订单流水号
 	  private String orderName;//订单名称
 	  private long orderAmt;//订单金额(单位分)
 	  private String orderStatus;//订单状态  INIT(已经创建)/PAY_PROCESS(支付中)/WAIT_PRISZE(待派奖)/PRISZE_OK(已派奖) 

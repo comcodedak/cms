@@ -5,15 +5,29 @@
 <mapper namespace="com.codedak.lottery.member.dao.IMemberDao">
    <resultMap  id="memberMap" type="com.codedak.lottery.entity.Member">
        <result column="MEMBER_NO" jdbcType="VARCHAR" property="memberNo" />
-		<result column="NAME" jdbcType="VARCHAR" property="name" />
+		<result column="LOGIN_NAME" jdbcType="VARCHAR" property="loginName" />
 		<result column="PWD" jdbcType="VARCHAR" property="pwd" />
-		<result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
-		<result column="UPDATE_TIME" jdbcType="VARCHAR" property="updataTime" />
+		<result column="NICE_NAME" jdbcType="VARCHAR" property="niceName" />
+		<result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updataTime" />
 		<result column="MARK" jdbcType="VARCHAR" property="mark" />
    </resultMap>
    
-	<select id="findAllMember" resultMap="memberMap" >
-		select MEMBER_NO, NAME, PWD, CREATE_TIME, UPDATE_TIME
-		from MEMBER_INFO
+   <insert id="add" parameterType="com.codedak.lottery.entity.Member">
+		insert into MEMBER_INFO
+			(MEMBER_NO, LOGIN_NAME, PWD, NICE_NAME)
+		values
+		(
+			#{memberNo,jdbcType=NUMERIC}, #{loginName,jdbcType=VARCHAR}, #{pwd,jdbcType=NUMERIC}, #{niceName,jdbcType=VARCHAR}
+		)
+	</insert>
+	<select id="query" resultMap="memberMap" parameterType="com.codedak.lottery.entity.Member">
+	    select MEMBER_NO,LOGIN_NAME,PWD,NICE_NAME,CREATE_TIME,UPDATE_TIME,MARK from MEMBER_INFO 
+	    where  1=1
+	      <where>
+			<if test="memberNo != null">and MEMBER_NO = #{memberNo}</if>
+			<if test="loginName != null">and LOGIN_NAME = #{loginName}</if>
+			<if test="pwd != null">and PWD = #{pwd}</if>
+	      </where>
 	</select>
 </mapper>

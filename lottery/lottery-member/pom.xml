@@ -8,7 +8,7 @@
     <artifactId>lottery</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>lottery-member-service</artifactId>
+  <artifactId>lottery-member</artifactId>
   <version>0.0.2-SNAPSHOT</version>
   <name>lottery-member</name>
   <url>http://maven.apache.org</url>
@@ -33,15 +33,7 @@
 
 
 
-        <!-- Spring Boot中使用Swagger2构建RESTful APIs  -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-        </dependency>
+
 
         
         

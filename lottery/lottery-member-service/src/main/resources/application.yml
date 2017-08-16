@@ -5,7 +5,7 @@ spring:
        name: lottery-member-service
     datasource:
        driver-class-name: org.h2.Driver
-       url: jdbc:h2:~/test
+       url: jdbc:h2:mem:test
        username: sa
        max-active: 10
        max-idle: 5
@@ -17,14 +17,17 @@ spring:
         enabled: true
         path: /h2
 mybatis:
-   mapper-locations: classpath:/mybatis/*Mapper.xml
+   config-locations: classpath:mybatis/mybatis-config.xml
+   mapper-locations: classpath:mybatis/*Mapper.xml
    type-aliases-package: com.codedak.entity
    
 logging:
    level:
-      root: info
+       root: info
       
 eureka:
+  instance: 
+    prefer-ip-address: true
   client:
-    serviceUrl:
-      defaultZone: http://10.118.206.130:9511/eureka/,
+    serviceUrl:   #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
+      defaultZone: http://127.0.0.1:9511/eureka/
