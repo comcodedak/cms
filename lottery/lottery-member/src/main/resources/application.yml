@@ -5,7 +5,7 @@ spring:
     name: lottery-member
 logging:
    level:
-      root: info
+      root: debug
       
 
         

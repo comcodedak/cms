@@ -51,6 +51,7 @@ public class MemberController {
     	try {
     		memberDao.add(member);
     	}catch (Exception e) {
+    		e.printStackTrace();
     		throw new GlobalException("9001", "注册失败");
 		}
     	
