@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.codedak.lottery.entity.Member;
 import com.codedak.lottery.member.App;
+import com.codedak.lottery.service.IMemberService;
 import com.codedak.lottery.service.MemberServiceFeignClient;
 
 @RunWith(SpringRunner.class)
@@ -20,18 +21,25 @@ public class MemberTest {
 	@Autowired
     private MemberServiceFeignClient client;
 	
-	//@Autowired
-    //private RestTemplate restTemplate;
+	@Autowired
+    private IMemberService memberService;
 	
     @Test
-    public void testQuery() throws Exception {
+    public void testRegister() throws Exception {
     	Member member=new Member();
-    	member.setLoginName("test222");
+    	member.setLoginName("test112222");
     	member.setPwd("test22");
     	member.setNiceName("sadas");
-    	client.login(member);
-    	//restTemplate.getForObject("http://lottery-member-service/member/login", Member.class);
+    	client.register(member);
     }
 
-    
+    @Test
+    public void testLogin() throws Exception {
+    	Member member=new Member();
+    	member.setLoginName("test");
+    	member.setPwd("test");
+    	memberService.login(member);
+    	memberService.login(member);
+    	memberService.login(member);
+    }
 }
