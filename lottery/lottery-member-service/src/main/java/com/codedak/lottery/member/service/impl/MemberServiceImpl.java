@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.codedak.hessian.spring.annotation.HessianService;
 import com.codedak.lottery.entity.Member;
 import com.codedak.lottery.member.dao.IMemberDao;
 import com.codedak.lottery.service.IMemberService;
 
-@Service("memberService")
+@HessianService(interfaces=IMemberService.class,name="memberService")
 public class MemberServiceImpl implements IMemberService{
 	@Autowired 
 	private IMemberDao memberDao;

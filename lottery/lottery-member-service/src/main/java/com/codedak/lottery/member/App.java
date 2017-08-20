@@ -5,6 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+import com.codedak.hessian.spring.annotation.EnableHessianAutoScan;
+
+
 /**
  * Hello world!
  *
@@ -12,6 +15,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @MapperScan("com.codedak.lottery.member.dao")
+@EnableHessianAutoScan(basePackages="com.codedak.lottery.member.service.impl")
 public class App 
 {
 	
