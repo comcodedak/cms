@@ -9,7 +9,7 @@ import com.codedak.hessian.spring.annotation.HessianService;
 import com.codedak.lottery.entity.Member;
 import com.codedak.lottery.member.dao.IMemberDao;
 import com.codedak.lottery.service.IMemberService;
-
+ 
 @HessianService(interfaces=IMemberService.class,name="memberService")
 public class MemberServiceImpl implements IMemberService{
 	@Autowired 
