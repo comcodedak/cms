@@ -10,12 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.codedak.lottery.entity.Member;
-import com.codedak.lottery.member.App;
+import com.codedak.lottery.member.AppMember;
 import com.codedak.lottery.service.IMemberService;
 import com.codedak.lottery.service.MemberServiceFeignClient;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT,classes=App.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT,classes=AppMember.class)
 public class MemberTest {
 
 	@Autowired

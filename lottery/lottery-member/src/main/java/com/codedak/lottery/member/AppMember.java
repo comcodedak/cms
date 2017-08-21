@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
+import com.codedak.hessian.spring.annotation.EnableHessianAutoScan;
+
 /**
  * Hello world!
  *
@@ -12,10 +14,11 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients("com.codedak.lottery.service")
-public class App 
+@EnableHessianAutoScan(basePackages="com.codedak.lottery.service")
+public class AppMember 
 {
     public static void main( String[] args )
     {
-    	SpringApplication.run(App.class,args);
+    	SpringApplication.run(AppMember.class,args);
     }
 }
