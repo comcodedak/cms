@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.util.Assert;
 
 import com.codedak.lottery.entity.Member;
 import com.codedak.lottery.member.App;
@@ -19,8 +18,8 @@ import com.codedak.lottery.service.MemberServiceFeignClient;
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT,classes=App.class)
 public class MemberTest {
 
-	//@Autowired
-   // private MemberServiceFeignClient client;
+	@Autowired
+    private MemberServiceFeignClient client;
 	
 	@Autowired
     private IMemberService memberService;
@@ -31,7 +30,7 @@ public class MemberTest {
     	member.setLoginName("test112222");
     	member.setPwd("test22");
     	member.setNiceName("sadas");
-    	//client.register(member);
+    	client.register(member);
     }
 
     @Test
@@ -39,6 +38,8 @@ public class MemberTest {
     	Member member=new Member();
     	member.setLoginName("test");
     	member.setPwd("test");
-    	System.out.println("=========>"+memberService.login(member).getNiceName());
+    	memberService.login(member);
+    	memberService.login(member);
+    	memberService.login(member);
     }
 }
